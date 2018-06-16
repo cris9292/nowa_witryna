@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Spectral by HTML5 UP</title>
+		<title>Selenium</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -41,14 +41,57 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Generic Page</h2>
-							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+							<h2>Coś o mnie</h2>
+							<p>Nazywam sie Krzsztof Małolepszy. </p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Lorem ipsum dolor</h3>
-								<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+								<h3>Selenium</h3>
+								<p>12.2014
+29
+
+adasdasd
+Początki automatyzacji – Selenium Webdriver
+Ostatnio coraz więcej znajomych chce rozwijać swoje testerskie umiejętności i wyjść z roli tylko testera manualnego. Pytają często czy jest w internecie jakaś prosta instrukcja jak i gdzie zacząć. Szukałem i w sumie ciężko o bezpłatne i łopatologiczne wyjaśnienie co i jak należy zrobić. Dlatego właśnie wzięło mnie na przygotowanie cyklu wpisów o tym jak zacząć zabawę z automatyzacją. Na pierwszy ogień Selenium Webdriver.
+
+Selenium Webdriver pozwala na automatyzację testów aplikacji webowych. Dzięki dobrze przygotowanemu zestawowi testów będziecie w stanie szybko stwierdzić czy wszystkie zmiany wprowadzone do testowanej aplikacji są zmianami pożądanymi. Wg mnie znacznie przyspiesza to pracę i pozwala skupić się na sprawdzaniu nowych funkcjonalności niż przeklikiwaniu kolejny raz tych samych modułów, ale jest też odmienny punkt widzenia – czas poświęcony na pisanie testów można wykorzystać inaczej. O za i przeciw – w innym artykule, zapraszam też do dyskusji w komentarzach.
+
+Żeby rozpocząć pracę z Selenium Webdriver musicie znać podstawy jednego z języków programowania, link z wymienionymi wszystkimi dostępnymi znajdziecie na samym dole artykułu. Ja jestem fanem Pythona, stąd póki co artykuły będą poświęcone właśnie pracy na tym języku. Później również pojawi się Java, na reszcie się nie znam, także ciężko powiedzieć czy artykuły o nich powstaną w niedalekiej przyszłości. ;)
+
+Ok, znasz jakiś język programowania, ale nie jest to Python, a chcesz się pobawić Webdriverem na podstawie tego artykułu. Najlepszym sposobem na poznanie podstaw Pythona jest kurs na tej stronie: >> klik << Kurs jest co prawda po angielsku, ale nie wymaga biegłej znajomości tego języka. Z pomocą Tłumacza Google’a nie powinno być większych problemów z przebiciem się przez to.
+
+Dobra, znasz już podstawy Pythona, czas się zabrać za instalację tego całego ustrojstwa. Zaczniemy od puszczania testów lokalnie, na twoim komputerze, później dojdzie odpalanie ich na serwerze za pomocą Jenkinsa, ale, jak mówił Bogusław Wołoszański, nie uprzedzajmy faktów.
+
+Zaczniemy od instalacji na systemie Windows, który, póki co, jest chyba najpopularniejszy w Polsce. Ja mam Win 7 i wszystkie screeny będą z tego systemu, ale nie powinno być większych różnic dla Win XP i Win 8. Jeśli takowe miałyby się pojawić postaram się wskazać gdzie można znaleźć rozwiązanie problemu. Potrzebujesz 6 rzeczy: Java Development Kit, Pythona, wirtualnego środowiska, Selenium, przeglądarki i IDE w którym będziesz pisać swoje testy. No to po kolei.
+
+Java Development Kit to najłatwiejsza rzecz do ogarnięcia. Nie jest to potrzebne do samego pisania i wykonywania testów, ale bez tego nasze IDE nie ruszy. Wystarczy wejść >> tu << i nacisnąć na przycisk „Download” przy JDK (patrz screen poniżej).
+
+download
+
+Powinno nastąpić przekierowanie do strony z najnowszą wersją JDK. Teraz, jak na screenie poniżej, trzeba zaakceptować warunki i wybrać wersję instalacyjną dla swojego systemu. Dla Win 7 wybrałem zaznaczoną pozycję. Na Firefoxie nie mogłem pobrać tego pliku, cały czas strona pluła się o zaakceptowanie warunków, dopiero na Chrome poszło bez problemu.
+
+jdk2
+
+Po pobraniu wystarczy zainstalować JDK, nie ma konieczności zmiany ustawień instalatora. Zgódź się na wszystko, przeklikaj „Dalej” i jedna rzecz z głowy. Lecimy dalej ;)
+
+Teraz załatwimy Pythona, środowisko wirtualne, Selenium i przeglądarkę. Po pierwsze pobierz Pythona w wersji  2.X.X z >> tej << strony. Wersję się zmieniają, teraz jest 2.7.9 (patrz screen poniżej). Można również tworzyć automaty dla Pythona 3.X.X, jeśli chcecie poczytać o różnicach w wersjach to zapraszam do linku na końcu artykułu. W późniejszych artykułach testy pisane będą dla 2.X.X, stąd jeśli zdecydujecie się na instalację 3.X.X w części z nich będziecie musieli zrobić kosmetyczne poprawki.
+
+python
+
+Po odpaleniu instalatora ważne jest, żeby zaznaczyć opcję z dodaniem ścieżek do Pythona do zmiennej PATH, oszczędzi to trochę pracy ;) Całość instalacji można zobaczyć >> tu << Lokalizacja waszego folderu z Pythonem nie ma znaczenia, dla ułatwienia możecie użyć domyślnej ;) Jeżeli wszystko jest ok po wywołaniu linii komend (na klawiaturze znak Windows + R, potem wpisać w oknie cmd i wcisnąć enter) i wpisaniu python powinna się wyświetlić jego wersja. U mnie wyglądało to >> tak <<.
+
+Python zainstalowany, czas na wirtualne środowisko. Co daje wirtualne środowisko możecie doczytać wchodząc w link na końcu artykułu. Odpal jeszcze raz linię komend. Musimy dostać się do folderu Scripts w lokalizacji, w której zainstalowaliście Pythona. Dla osób niezaznajomionych z linią komend – żeby cofnąć się o jeden folder wstecz należy wpisać cd.. i wcisnąć enter a o jeden folder do przodu cd nazwa_folderu + enter. U mnie przejście do folderu wyglądało >> tak <<. Teraz trzeba zainstalować pipa i wirtualne środowisko. Żeby to zrobić najpierw wpisz easy_install pip i wciśnij enter. Jak już się zainstaluje wpisz pip install virtualenv i wciśnij enter. Powinno to wszystko wyglądać >> tak << Teraz pozostaje tylko wybrać gdzie chce się posiadać folder z wirtualnym środowiskiem i jak się ma nazywać. Ja chciałem, żeby był on w głównym folderze pythona i nazywał się „Tests”. Najpierw cofnąłem się o jeden folder wpisując cd.. i wciskając enter, a potem zainstalowałem wszystko wpisując Scripts\virtualenv Tests i enter. Tests to nazwa folderu, tu również jest dowolność. Powinno to wyglądać >> tak <<.
+
+Brawo, wirtualne środowisko zainstalowane. Teraz Selenium. Dalej w linii komend przechodzimy do utworzonego folderu, a następnie do folderu Scripts. Będąc już w tej lokalizacji wpisz pip install selenium i enter. Powinno to wyglądać >> tak <<.
+
+Teraz jeszcze tylko wybór przeglądarki. Na początek proponuję Firefoxa lub Chrome’a. Firefox do pobrania >>tu<<, Chrome do pobrania >> tu << W przypadku Chrome’a potrzebny jest jeszcze chromedriver. Znajdziecie go >> tutaj << Proponuje wybrać najnowszą wersję (teraz 2.13) i pobrać paczkę dla odpowiedniego systemu (u mnie chromedriver_win32.zip). Po pobraniu trzeba rozpakować paczkę, do pliku trzeba ustawić zmienną PATH, ale dla ułatwienia po prostu wrzućcie ten plik do folderu Pythona. Et voila.
+
+Pozostaje ostatnia rzecz do zrobienia – instalacja i konfiguracja IDE. Czym jest IDE dowiecie się wchodząc w link z końca artykułu. Od tej pory całość pracy będzie wykonywana tam. Ja korzystam z Eclipse, do pobrania >>stąd<<. Eclipse IDE for Java Developers,  ja korzystam z wersji 64 Bit. Po pobraniu trzeba rozpakować do dowolnego folderu i Eclipse jest gotowy do odpalenia. Po włączeniu Eclipse żąda podania folderu, w którym będą się znajdować projekty. Czy zostanie domyślny czy stworzycie własny – nie ma to większego znaczenia, jak wygodniej ;) Teraz trzeba zainstalować IDE dla Pythona. Wejdź w menu Help, następnie wybierz Eclipse Marketplace. W polu Find wpisz pydev i wciśnij enter. Jednym z wyników wyszukiwania powinien być PyDev – Python IDE for Eclipse 3.9.0. Kilknij na przycisk Install, a następnie potwierdź umowy licencyjne i certyfikaty. Całość instalacji u mnie wyglądała >> tak <<. Eclipse będzie się chciał zrestartować, na co mu pozwalamy. Po restarcie po wciśnięciu przycisku w prawym górnym rogu Open Perspective jedną z opcji powinien być PyDev. Zaznacz, kliknij na OK i gotowe! Masz wszystko co potrzebne by zacząć tworzyć automaty w Pythonie!
+
+W następnej części stworzymy projekt i odpalimy pierwszy test ;)
+
+Dajcie znać w komentarzach jeśli coś jest niejasne, postaram się wytłumaczyć o ile będę potrafił ;)</p>
 
 								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
 
